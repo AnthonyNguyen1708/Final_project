@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, fetchUserList } from "../redux/action";
-import { Pagination } from "antd";
+
 import { DeleteOutlined } from "@ant-design/icons";
 
 const UserList = () => {
