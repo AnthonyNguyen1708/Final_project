@@ -1,4 +1,4 @@
-const sliceName = "user";
+const sliceName = "userList";
 
 const actions = {
   GET_USERLIST: `${sliceName}/GET_USERLIST`,
