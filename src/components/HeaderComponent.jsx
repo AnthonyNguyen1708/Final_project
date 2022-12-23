@@ -1,62 +1,25 @@
-// import React, { useState } from "react";
-// import { DesktopOutlined, FileOutlined, TeamOutlined } from "@ant-design/icons";
-// import { Layout, Menu, theme } from "antd";
-// const { Sider } = Layout;
-// function getItem(label, key, icon, children) {
-//   return {
-//     key,
-//     icon,
-//     children,
-//     label,
-//   };
-// }
-// const items = [
-//   getItem("Projects", "sub1", <DesktopOutlined />, [
-//     getItem("View all projects", "3"),
-//     getItem("Create projects", "4"),
-//   ]),
-//   getItem("USers", "sub2", <TeamOutlined />, [
-//     getItem("Team 1", "6"),
-//     getItem("Team 2", "8"),
-//   ]),
-//   getItem("Create Task", "9", <FileOutlined />),
-// ];
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
-// const HeaderComponent = () => {
-//   const [collapsed, setCollapsed] = useState(false);
-//   const {
-//     token: { colorBgContainer },
-//   } = theme.useToken();
-//   return (
-//     <Layout
-//       style={{
-//         minHeight: "100vh",
-//       }}
-//     >
-//       <Sider
-//         collapsible
-//         collapsed={collapsed}
-//         onCollapse={(value) => setCollapsed(value)}
-//       >
-//         <div
-//           className="text-white text-2xl text-center"
-//           style={{
-//             height: 32,
-//             margin: 16,
-//             background: "rgba(255, 255, 255, 0.2)",
-//           }}
-//         >
-//           JIRA{" "}
-//         </div>
-//         <Menu
-//           theme="dark"
-//           defaultSelectedKeys={["1"]}
-//           mode="inline"
-//           items={items}
-//         />
-//       </Sider>
-//     </Layout>
-//   );
-// };
+const HeaderComponent = () => {
+  return (
+    <div>
+      <header className="bg-slate-900 h-20">
+        <div className=" px-4 h-full mx-auto flex justify-between items-center">
+          <nav className="left  d-flex items-center">
+            <a className="text-4xl no-underline px-2 text-white">JIRA</a>
+            <a className="text-2xl no-underline px-2 text-white">Projects</a>
+            <a className="text-2xl no-underline px-2 text-white">User</a>
+            <a className="text-2xl no-underline px-2 text-white">Create Task</a>
+          </nav>
+          <div>
+            <button>Setting</button>
+            <button>Hello user</button>
+          </div>
+        </div>
+      </header>
+    </div>
+  );
+};
 
-// export default HeaderComponent;
+export default HeaderComponent;

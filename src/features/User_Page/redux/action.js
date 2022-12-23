@@ -18,13 +18,16 @@ export const fetchUserList = async (next) => {
   }
 };
 
-// export const deleteUser = async (id) => {
-//   try {
-//     await requester({
-//       method: "DELETE",
-//       url: apiPath.DELETE_USER + "?id=" + id,
-//     });
-//   } catch (error) {
-//     console.log("error: ", error);
-//   }
-// };
+export const deleteUser = (id) => {
+  return async (next) => {
+    try {
+      await requester({
+        method: "DELETE",
+        url: apiPath.DELETE_USER + "?id=" + id,
+      });
+      next(fetchUserList);
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+};
