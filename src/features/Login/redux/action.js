@@ -7,7 +7,7 @@ export const loginAction = (userLogin) => {
     try {
       const res = await requester({
         method: "POST",
-        url: "/api/Users/signin",
+        url: apiPath.POST_USER_LOGIN,
         data: userLogin,
       });
       next({
@@ -21,6 +21,16 @@ export const loginAction = (userLogin) => {
   };
 };
 
-
-  
-
+export const signupAction = (userInfo) => {
+  return async (next) => {
+    try {
+      await requester({
+        method: "POST",
+        url: apiPath.POST_USER_SIGNUP,
+        data: userInfo,
+      });
+    } catch (error) {
+      console.log("error: ", error);
+    }
+  };
+};

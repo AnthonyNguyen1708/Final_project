@@ -10,17 +10,6 @@ import { apiPath } from "app/apiPath";
 import HeaderComponent from "components/HeaderComponent";
 
 const UserList = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -88,20 +77,6 @@ const UserList = () => {
                     >
                       <DeleteOutlined />
                     </button>
-
-                    <Button type="primary" onClick={showModal}>
-                      Open Modal
-                    </Button>
-                    <Modal
-                      title="Modal"
-                      open={isModalOpen}
-                      onOk={handleOk}
-                      onCancel={handleCancel}
-                    >
-                      <p>Some contents...</p>
-                      <p>Some contents...</p>
-                      <p>Some contents...</p>
-                    </Modal>
                   </td>
                 </tr>
               );

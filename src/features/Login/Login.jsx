@@ -6,14 +6,17 @@ import Sider from "antd/es/layout/Sider";
 import { Content } from "antd/es/layout/layout";
 import { LockOutlined, TwitterOutlined, UserOutlined } from "@ant-design/icons";
 import { withFormik } from "formik";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogin = async (value) => {
     console.log("value: ", value);
     try {
       await dispatch(loginAction(value));
+      navigate("/user");
     } catch (error) {
       console.log("error: ", error);
     }
@@ -100,6 +103,13 @@ const Login = () => {
                     Login
                   </Button>
                 </Form.Item>
+                <p className="text-center">
+                  Haven't have an account yet?
+                  <span> | </span>
+                  <Link to="/signup" href="">
+                    Register now
+                  </Link>
+                </p>
               </Form>
               <div className="social mt-3 d-flex">
                 <Button
