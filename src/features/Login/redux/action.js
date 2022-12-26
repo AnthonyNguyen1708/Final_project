@@ -10,11 +10,15 @@ export const loginAction = (userLogin) => {
         url: apiPath.POST_USER_LOGIN,
         data: userLogin,
       });
+      console.log(res.data.content);
       next({
         type: actions.SET_PROFILE,
         payload: res.data.content,
       });
+
       localStorage.setItem("token", res.data.content.accessToken);
+      const user = JSON.stringify(res.data.content)
+      localStorage.setItem("user", user);
     } catch (error) {
       throw error;
     }

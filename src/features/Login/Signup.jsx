@@ -6,10 +6,8 @@ import {
   LockOutlined,
   MailOutlined,
   PhoneOutlined,
-  TwitterOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import FormItem from "antd/es/form/FormItem";
 import { signupAction } from "./redux/action";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";

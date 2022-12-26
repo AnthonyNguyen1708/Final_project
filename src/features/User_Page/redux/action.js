@@ -8,7 +8,7 @@ export const fetchUserList = async (next) => {
       method: "GET",
       url: apiPath.GET_USERLIST,
     });
-    console.log("A", res.data);
+    console.log("A", res.data.content);
     next({
       type: actions.GET_USERLIST,
       payload: res.data.content,
@@ -21,10 +21,11 @@ export const fetchUserList = async (next) => {
 export const deleteUser = (id) => {
   return async (next) => {
     try {
-      await requester({
+      const res = await requester({
         method: "DELETE",
         url: apiPath.DELETE_USER + "?id=" + id,
       });
+      // res.status === 200
       next(fetchUserList);
     } catch (error) {
       console.log("error: ", error);

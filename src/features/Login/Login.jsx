@@ -12,18 +12,25 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // const loginSuccess = useSelector(sta...)
+
   const handleLogin = async (value) => {
     console.log("value: ", value);
     try {
       await dispatch(loginAction(value));
+      // setTimeout
       navigate("/user");
     } catch (error) {
       console.log("error: ", error);
     }
   };
+
+
+
   return (
     <div>
       <Layout>
+        {/* {loginSuccess && message} */}
         <Sider
           width={window.innerWidth / 2}
           style={{

@@ -8,13 +8,13 @@ const AppRouter = ({ component: Comp, isPrivate, isAuth }) => {
   const profile = useSelector((state) => state.user.profile);
 
   if (isPrivate) {
-    if (token) return <Comp />
+    if (token) return <Comp />;
     return <Navigate to="/" replace />;
   }
 
   if (isAuth) {
     if (!profile) return <Comp />;
-    return <Navigate to="/" replace />;
+    return <Navigate to="/user" replace />;
   }
   return <Comp />;
 };
